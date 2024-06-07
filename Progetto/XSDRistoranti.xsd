@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="provinciaTreviso">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="ristorante" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="nome" type="xs:string"/>
+              <xs:element name="sito_Web_social" type="xs:string"/>
+              <xs:element name="tipologia" type="xs:string"/>
+              <xs:element name="locazione" type="xs:string"/>
+              <xs:element name="recensione_media" type="xs:float"/>
+              <xs:element name="telefono" type="xs:string"/>
+              <xs:element name="descrizione" type="xs:string"/>
+              <xs:element name="comune">
+                <xs:complexType>
+                  <xs:simpleContent>
+                    <xs:extension base="xs:string">
+                      <xs:attribute name="CAP" type="xs:integer"/>
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="servizi">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="asporto" type="xs:boolean"/>
+                    <xs:element name="cons_posto" type="xs:boolean"/>
+                    <xs:element name="ser_domicilio" type="xs:boolean"/>
+                    <xs:element name="pranzo" type="xs:boolean"/>
+                    <xs:element name="cena" type="xs:boolean"/>
+                    <xs:element name="Wi-fi" type="xs:boolean"/>
+                    <xs:element name="toilette" type="xs:boolean"/>
+                  </xs:sequence>
+                  <xs:attribute name="id_serv" type="xs:integer"/>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="cod_rist" type="xs:integer"/>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+</xs:schema>
